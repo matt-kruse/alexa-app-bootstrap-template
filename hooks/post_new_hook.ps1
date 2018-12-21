@@ -49,3 +49,5 @@ Foreach ($SOURCE_DIR in $ALL_SOURCE_DIRS) {
 if ($DO_DEBUG) {
     Write-Output "###########################"
 }
+
+exit 0

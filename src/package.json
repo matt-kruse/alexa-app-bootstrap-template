@@ -1,6 +1,6 @@
 {
   "main": "index.js",
   "dependencies": {
-    "alexa-app-bootstrap": "^1.0.0",
+    "alexa-app-bootstrap": "^1.0.0"
   }
 }
