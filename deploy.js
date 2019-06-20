@@ -83,9 +83,8 @@ if (pc) {
 }
 
 // If lambda is specified in code, update config. This normally shouldn't happen.
-if (metadata.lambda_endpoint) {
-  skill.manifest.apis.custom.endpoint.uri = metadata.lambda_endpoint;
-}
+var lambda_endpoint = metadata.lambda_endpoint || ("ask-" + metadata.invocationName.replace(/\s/g,'-'));
+skill.manifest.apis.custom.endpoint.uri = lambda_endpoint;
 
 // Update ./.ask/config
 if (metadata.skill_id) {
