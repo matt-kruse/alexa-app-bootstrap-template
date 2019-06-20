@@ -1,4 +1,7 @@
-let alexa_app = require('alexa-app-bootstrap');
+//let alexa_app = require('alexa-app-bootstrap');
+const { app, say, ask, sayif, saylookup, YES, NO, HELP, FALLBACK, DEFAULT, SCHEMA, ACCEPTED, DECLINED, POPSTATE, NOSTATECHANGE, SETSTATE, CLEARSTATE, GOTO, log } = require('alexa-app-bootstrap');
+
+/*
 // Annoying, because we can't import{} yet
 let app = alexa_app.app;
 let say = alexa_app.say;
@@ -19,6 +22,7 @@ let SETSTATE = alexa_app.SETSTATE;
 let CLEARSTATE = alexa_app.CLEARSTATE;
 let GOTO = alexa_app.GOTO;
 let log = alexa_app.log;
+*/
 
 // APP METADATA
 // ============
@@ -26,8 +30,8 @@ let invocationName = "example skill";
 let skillName = "Example Skill";
 
 app.metadata = {
-  "skill_id": ""
-  ,"lambda_endpoint": ""
+  "skill_id": "" // Leave empty unless over-writing an existing skill
+  ,"lambda_endpoint": "" // Leave empty unless over-writing an existing lambda
   ,"category":"GAMES"
   ,"invocationName": invocationName
   ,"languages": {

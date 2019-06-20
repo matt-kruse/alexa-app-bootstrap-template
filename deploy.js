@@ -8,12 +8,6 @@ var ask_config = JSON.parse(fs.readFileSync("./.ask/config"));
 
 var new_skill = !ask_config.deploy_settings['default'].skill_id;
 
-// Sanity Checks
-if (!metadata.lambda_endpoint) {
-  console.error("ERROR: No lambda_endpoint specified in app's metadata. This is required, due to a problem with the ask-cli's auto-generated lambda identifiers.");
-  process.exit();
-}
-
 var lang,locale,locales={},policies={};
 for (lang in metadata.languages) {
   for (locale of metadata.languages[lang].locales) {
@@ -88,17 +82,18 @@ if (pc) {
   });
 }
 
-// Write out skill.json
-fs.writeFileSync('./skill.json', JSON.stringify(skill,null,2));
+// If lambda is specified in code, update config. This normally shouldn't happen.
+if (metadata.lambda_endpoint) {
+  skill.manifest.apis.custom.endpoint.uri = metadata.lambda_endpoint;
+}
 
 // Update ./.ask/config
 if (metadata.skill_id) {
   ask_config.deploy_settings['default'].skill_id = metadata.skill_id;
 }
-if (metadata.lambda_endpoint) {
-  ask_config.deploy_settings['default'].merge.manifest.apis.custom.endpoint.uri = metadata.lambda_endpoint;
-}
 
+// Write out config files
+fs.writeFileSync('./skill.json', JSON.stringify(skill,null,2));
 fs.writeFileSync('./.ask/config', JSON.stringify(ask_config,null,2));
 
 
