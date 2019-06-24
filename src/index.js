@@ -1,28 +1,4 @@
-//let alexa_app = require('alexa-app-bootstrap');
-const { app, say, ask, sayif, saylookup, YES, NO, HELP, FALLBACK, DEFAULT, SCHEMA, ACCEPTED, DECLINED, POPSTATE, NOSTATECHANGE, SETSTATE, CLEARSTATE, GOTO, log } = require('alexa-app-bootstrap');
-
-/*
-// Annoying, because we can't import{} yet
-let app = alexa_app.app;
-let say = alexa_app.say;
-let ask = alexa_app.ask;
-let sayif = alexa_app.sayif;
-let saylookup = alexa_app.saylookup;
-let YES = alexa_app.YES;
-let NO = alexa_app.NO;
-let HELP = alexa_app.HELP;
-let FALLBACK = alexa_app.FALLBACK;
-let DEFAULT = alexa_app.DEFAULT;
-let SCHEMA = alexa_app.SCHEMA;
-let ACCEPTED = alexa_app.ACCEPTED;
-let DECLINED = alexa_app.DECLINED;
-let POPSTATE = alexa_app.POPSTATE;
-let NOSTATECHANGE = alexa_app.NOSTATECHANGE;
-let SETSTATE = alexa_app.SETSTATE;
-let CLEARSTATE = alexa_app.CLEARSTATE;
-let GOTO = alexa_app.GOTO;
-let log = alexa_app.log;
-*/
+const { app, say, ask, sayif, saylookup, ddb, YES, NO, HELP, FALLBACK, DEFAULT, SCHEMA, ACCEPTED, DECLINED, POPSTATE, NOSTATECHANGE, SETSTATE, CLEARSTATE, GOTO, log } = require('alexa-app-bootstrap');
 
 // APP METADATA
 // ============
@@ -127,7 +103,7 @@ app.launch(()=>{
 });
 
 // connect to lambda
-exports.handler = app.lambda_hander;
+exports.handler = app.lambda_handler;
 
 // Export the app for build and deployment
 module.exports = app;

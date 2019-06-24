@@ -1,6 +1,8 @@
 clean.bat
 skill.template.json
 config.template
+.idea/
+hooks/
 
 # Logs
 logs
