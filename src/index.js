@@ -1,4 +1,4 @@
-const { app, say, ask, sayif, saylookup, ddb, YES, NO, HELP, FALLBACK, DEFAULT, SCHEMA, ACCEPTED, DECLINED, POPSTATE, NOSTATECHANGE, SETSTATE, CLEARSTATE, GOTO, log } = require('alexa-app-bootstrap');
+const { app, say, ask, sayif, saylookup, YES, NO, HELP, FALLBACK, DEFAULT, SCHEMA, ACCEPTED, DECLINED, POPSTATE, NOSTATECHANGE, SETSTATE, CLEARSTATE, GOTO, log } = require('alexa-app-bootstrap');
 
 // APP METADATA
 // ============
@@ -14,7 +14,7 @@ app.metadata = {
     "en": {
       "locales": [ "US" ],
       "data": {
-        "summary": "Insert Summary Here",
+        "summary": `Insert Summary Here`,
         "examplePhrases": [
           `Alexa open ${invocationName}`,
           `Alexa play ${invocationName}`,
@@ -22,13 +22,9 @@ app.metadata = {
         ],
         "name": skillName,
         "description": `Insert description that will show up in the skill store.
-        
           Since the skill store description box accepts multiple lines, you can add lines here.
-          
           Newlines will be correctly supported.`,
-        "keywords": [
-          'keyword1','keyword2','keyword3'
-        ],
+        "keywords": [ 'keyword1','keyword2','keyword3' ],
         "smallIconUri": "", // 108x108
         "largeIconUri": "" // 512x512
       },
@@ -38,9 +34,8 @@ app.metadata = {
       }
     }
   }
-  ,"testingInstructions": `Insert certification testing instructions here.
-  
-    It can span multiple lines.`
+  ,"testingInstructions": `Insert certification testing instructions here.  
+                           It can span multiple lines.`
   ,"interfaces": [
     "RENDER_TEMPLATE" 
     //,"GAME_ENGINE"
@@ -77,10 +72,10 @@ app.metadata = {
 // APP BEHAVIOR CONFIG
 // ===================
 app.config = {
-  user_persistence_table: "users"
-  ,user_persistence_key: "userid"
-  ,logging_enabled: true
+  logging_enabled: true
   ,log_request_response: true
+  //,user_persistence_table: "users"
+  //,user_persistence_key: "userid"
 };
 // Word synonyms to randomly replace during output
 app.outputSynonyms = {
