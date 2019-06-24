@@ -3,17 +3,19 @@
     "default": {
       "skill_id": "",
       "was_cloned": false,
-      "merge": {
-        "manifest": {
-          "apis": {
-            "custom": {
-              "endpoint": {
-                "uri": ""
-              }
-            }
+      "merge": {},
+      "resources": {
+        "lambda": [
+          {
+            "alexaUsage": [
+              "custom/default"
+            ],
+            "codeUri": "src",
+            "handler": "index.handler",
+            "runtime": "nodejs10.x"
           }
-        }
-      }
+        ]
+      }	  
     }
   }
 }
