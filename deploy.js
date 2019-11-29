@@ -60,6 +60,9 @@ if (!skill.manifest.permissions || skill.manifest.permissions.length===0) {
 
 // Update events
 if (metadata.events && metadata.events.subscriptions) {
+  if (!skill.manifest.events) {
+    skill.manifest.events={};
+  }
   skill.manifest.events.subscriptions=[];
   metadata.events.subscriptions.forEach((i)=>{
     skill.manifest.events.subscriptions.push({"name":i});
