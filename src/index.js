@@ -1,4 +1,4 @@
-const { app, say, ask, sayif, saylookup, YES, NO, HELP, FALLBACK, DEFAULT, SCHEMA, ACCEPTED, DECLINED, POPSTATE, NOSTATECHANGE, SETSTATE, CLEARSTATE, GOTO, log } = require('alexa-app-bootstrap');
+const { app, user, say, ask, sayif, saylookup, YES, NO, HELP, FALLBACK, DEFAULT, SCHEMA, ACCEPTED, DECLINED, POPSTATE, NOSTATECHANGE, SETSTATE, CLEARSTATE, GOTO, log } = require('alexa-app-bootstrap');
 
 // Load the skill's metadata
 app.metadata = require('./metadata.js');
